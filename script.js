@@ -21,7 +21,7 @@ setInterval(() => {
         return
     }
     const passedTimeInMins = (Date.now() - startingTime) / 1000 / 60
-    currentSpeed = writtenHTML.textContent.length / passedTimeInMins
+    currentSpeed = writtenHTML.textContent.length / passedTimeInMins / 5
     speedHTML.textContent = Math.round(currentSpeed)
 }, 100)
 
