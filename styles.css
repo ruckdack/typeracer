@@ -1,0 +1,89 @@
+html {
+    --darker: rgb(50, 50, 50);
+    --lighter: rgb(80, 80, 80);
+    --light-text-color: white;
+
+    --border-radius: 8px;
+    --blink-speed: 1s;
+
+    font-family: sans-serif;
+    font-size: 50px;
+    color: var(--light-text-color)
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darker);
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#card {
+    background-color: var(--lighter);
+    width: min(80%, 15rem);
+    height: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    white-space: pre;
+    transition: background-color 50ms linear;
+}
+
+#card.error {
+    background-color: rgb(150, 77, 77);
+}
+
+#written {
+    position: absolute;
+    right: 50%;
+    padding-right: 0.05rem;
+    max-width: calc(50% - 0.05rem);
+    direction: rtl;
+    overflow: hidden;
+}
+
+#cursor {
+    width: 4px;
+    height: 0.9rem;
+    background-color: var(--light-text-color);
+}
+
+#yet-to-write {
+    color: var(--darker);
+    position: absolute;
+    left: 50%;
+    padding-left: 0.05rem;
+}
+
+footer {
+    height: 100px;
+    background-color: var(--darker);
+}
+
+.blink {
+    animation: blink var(--blink-speed) steps(2, start) infinite;
+    -webkit-animation: blink var(--blink-speed) steps(2, start) infinite;
+  }
+@keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
